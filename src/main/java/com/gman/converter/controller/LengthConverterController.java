@@ -23,9 +23,11 @@ public class LengthConverterController {
         return "index";
     }
 
-    @RequestMapping("convert/{fromUnit}/{toUnit}")
-    public String convert(@PathVariable String fromUnit, @PathVariable String toUnit) {
-        return lengthConverter.convert(fromUnit, toUnit);
+    @RequestMapping("convert/{fromUnit}/{toUnit}/{value}")
+    public String convert(@PathVariable String fromUnit,
+                          @PathVariable String toUnit,
+                          @PathVariable Long value) {
+        return lengthConverter.convert(fromUnit, toUnit, value);
     }
 
 
