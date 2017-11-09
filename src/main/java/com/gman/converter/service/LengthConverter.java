@@ -16,11 +16,10 @@ public class LengthConverter {
 
         String resultTemplate = "@{value} @{fromUnit} is @{calculatedResult} @{toUnit}";
 
-        LengthUnitSoap ws = new LengthUnit().getLengthUnitSoap();
-
         Lengths lengthFrom = Lengths.fromValue(upperCaseFirstLetter(from));
         Lengths lengthTo = Lengths.fromValue(upperCaseFirstLetter(to));
 
+        LengthUnitSoap ws = new LengthUnit().getLengthUnitSoap();
         double calcResult = ws.changeLengthUnit(value, lengthFrom, lengthTo);
 
         return resultTemplate
